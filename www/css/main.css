@@ -2,6 +2,7 @@
 body{
 	width:640px;
 	height:1136px;
+	background-color: #00ADEF;
 	background-image: url("../img/bg-01.jpg");
 	background-repeat: no-repeat;
 	background-size: 640px 1136px;
