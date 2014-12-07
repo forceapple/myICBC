@@ -278,7 +278,7 @@ var page={
 	};
 
 
-document.addListener("deviceready", function(){
+$(document).ready(function(){
 	$(body).append("hi")
 	if(page.num==-1){
 		page.go(page.login)
