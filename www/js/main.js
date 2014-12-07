@@ -278,7 +278,7 @@ var page={
 	};
 
 
-$(document).ready(function(){
+document.addListener("deviceready", function(){
 	if(page.num==-1){
 		page.go(page.login)
 		//this is the not register_btn on the login page
