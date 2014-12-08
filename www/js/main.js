@@ -94,7 +94,8 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image:'this will be the upload img page',
+		image:'this will be the upload img page'+
+				'<img  class="next_btn" src="img/next_btn.png"/>',
 		// page 5 google maps page
 		maps: 'this is the map',
 		// page 6
@@ -196,10 +197,11 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
+
 													page.go(page.image)
 													//put camera stuff here************
 													//*****temp to go next page
-													$('.next_but').click(function(){
+													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
 														if(page.num==2){
 															page.num =3;
@@ -279,7 +281,6 @@ var page={
 
 
 $(document).ready(function(){
-	$("body").append("hi")
 	if(page.num==-1){
 		page.go(page.login)
 		//this is the not register_btn on the login page
