@@ -197,8 +197,19 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
+													navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+													    destinationType: Camera.DestinationType.FILE_URI,
+													    saveToPhotoAlbum:true
+													 }); 
 
-													page.go(page.image)
+													function onSuccess(url) {
+													    $("body").append("<img src='"+url+"' />");
+													}
+
+													function onFail(message) {
+													    alert('Failed because: ' + message);
+													}
+													//page.go(page.image)
 													//put camera stuff here************
 													//*****temp to go next page
 													$(document).on('click', '.next_btn', function(){

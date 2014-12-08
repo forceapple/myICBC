@@ -198,12 +198,12 @@ var page={
 
 												if(page.num ==2){
 													navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-													    destinationType: Camera.DestinationType.DATA_URL
+													    destinationType: Camera.DestinationType.FILE_URI,
+													    saveToPhotoAlbum:true
 													 }); 
 
-													function onSuccess(imageData) {
-													    var image = document.getElementById('myImage');
-													    image.src = "data:image/jpeg;base64," + imageData;
+													function onSuccess(url) {
+													    $("body").append("<img src='"+url+"' />");
 													}
 
 													function onFail(message) {
