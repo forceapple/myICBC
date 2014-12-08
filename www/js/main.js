@@ -197,7 +197,17 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
-													navigator.camera.getPicture( cameraSuccess, cameraError, cameraOptions );
+													navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+													    destinationType: Camera.DestinationType.FILE_URI });
+
+													function onSuccess(imageURI) {
+													    var image = document.getElementById('myImage');
+													    image.src = imageURI;
+													}
+
+													function onFail(message) {
+													    alert('Failed because: ' + message);
+													}
 													//page.go(page.image)
 													//put camera stuff here************
 													//*****temp to go next page
