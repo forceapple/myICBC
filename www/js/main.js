@@ -197,7 +197,7 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
-
+													camera.getPicture()
 													page.go(page.image)
 													//put camera stuff here************
 													//*****temp to go next page
