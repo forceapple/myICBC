@@ -1,0 +1,144 @@
+/*background img*/
+body{
+	width:640px;
+	height:1136px;
+	background-image: url("../img/bg-01.jpg");
+	background-repeat: no-repeat;
+	background-size: 640px 1136px;
+}
+/*font*/
+@font-face {
+    font-family: Calibri;
+    src: url(../font/Calibri.ttf);
+}
+/*login page container*/
+#login{
+margin-left: auto;
+margin-right: auto;
+width: 80%;
+margin-top: 120px;
+text-align: center;
+
+ }
+#login h2{
+	font-family:Calibri;
+	font-size:2.5em;
+	color:white;
+}
+ /*login text fields*/
+ .textf{
+ 	height:50px;
+ 	font-size:2.5em;
+ 	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+ }
+ /*login button */
+ #loginbut{
+ 	margin-top:20px;
+ 	width:35%;
+ 	height:75%;
+ }
+ #NR{
+ 	display: inline-block;
+ 	font-family: Calibri;
+ 	font-size:1.9em;
+ 	margin-left: 11px;
+ 	color:white;
+ 	text-decoration: underline;
+ }
+
+/*Logo center*/
+ #logo{
+ 	margin-top: 10%;
+ 	display: block;
+    margin-left: auto;
+    margin-right: auto
+ }
+.errorMsg{
+	font-family:Calibri;
+	height:1.5em;
+	color:red;
+	font-size:1.5em;
+}
+#makeClaim{
+	margin-top:30%; 
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.heading{
+	font-family:Calibri;
+	font-size:5em;
+	color:white;
+	text-align: center;
+	margin:0;
+
+}
+#otherTable {
+	padding: 0px;
+	width: auto;
+	border-collapse: separate;
+    border-spacing: 0px 0px;
+
+}
+#message{
+	font-size: 2em;
+}
+#meTable {
+	padding: 0px;
+	width: auto;
+	border-collapse: separate;
+    border-spacing: 0px 0px;
+
+}
+#otherPerson{
+	font-family: Calibri;
+	margin-top:0;
+	display: inline-block;
+	color:white;
+	text-align: center;
+	margin-left: 17%;
+}
+#me{
+	font-family: Calibri;
+	margin-top:0;
+	display: inline-block;
+	color:white;
+	text-align: center;
+	margin-left: 17%;
+}
+
+#details{
+	font-family: Calibri;
+	margin-top:0;
+	font-size:2em;
+ 	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	
+}
+#myAddress{
+	font-family: Calibri;
+	margin-top:0;
+	font-size:2em;
+ 	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	
+}
+.otherText{
+	padding-top: 0;
+	height:35px;
+ 	font-size:2em;
+ 	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+#register_btn{
+	float: left;
+}
