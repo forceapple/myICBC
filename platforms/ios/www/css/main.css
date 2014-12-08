@@ -1,10 +1,9 @@
 /*background img*/
 body{
-	width:640px;
-	height:1136px;
-	background-image: url("../img/bg-01.jpg");
-	background-repeat: no-repeat;
-	background-size: 640px 1136px;
+	
+	background-color: #00ADEF;
+
+	
 }
 /*font*/
 @font-face {
@@ -15,20 +14,19 @@ body{
 #login{
 margin-left: auto;
 margin-right: auto;
-width: 80%;
-margin-top: 120px;
+width: 89.5%;
 text-align: center;
 
  }
 #login h2{
 	font-family:Calibri;
-	font-size:2.5em;
+	font-size:1.5em;
 	color:white;
 }
  /*login text fields*/
  .textf{
- 	height:50px;
- 	font-size:2.5em;
+ 	height:100%;
+ 	font-size:1.5em;
  	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -36,17 +34,17 @@ text-align: center;
  }
  /*login button */
  #loginbut{
- 	margin-top:20px;
- 	width:35%;
- 	height:75%;
+ 	margin-top:10%;
+ 	width:60%;
+ 	height:80%;
  }
  #NR{
  	display: inline-block;
  	font-family: Calibri;
- 	font-size:1.9em;
- 	margin-left: 11px;
+ 	font-size:1.3em;
  	color:white;
  	text-decoration: underline;
+	margin-top: 5%;
  }
 
 /*Logo center*/
@@ -54,13 +52,17 @@ text-align: center;
  	margin-top: 10%;
  	display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+	width: 50%;
+	height: 50%;
+	
  }
 .errorMsg{
 	font-family:Calibri;
-	height:1.5em;
 	color:red;
-	font-size:1.5em;
+	font-size:1em;
+	display: block;
+	margin-top: 10%;
 }
 #makeClaim{
 	margin-top:30%; 
@@ -70,10 +72,12 @@ text-align: center;
 }
 .heading{
 	font-family:Calibri;
-	font-size:5em;
+	font-size:3em;
 	color:white;
 	text-align: center;
 	margin:0;
+	margin-left: auto;
+	margin-right: auto;
 
 }
 #otherTable {
@@ -84,7 +88,7 @@ text-align: center;
 
 }
 #message{
-	font-size: 2em;
+	font-size: 1em;
 }
 #meTable {
 	padding: 0px;
@@ -123,7 +127,7 @@ text-align: center;
 #myAddress{
 	font-family: Calibri;
 	margin-top:0;
-	font-size:2em;
+	font-size:1.5em;
  	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -133,7 +137,7 @@ text-align: center;
 .otherText{
 	padding-top: 0;
 	height:35px;
- 	font-size:2em;
+ 	font-size:1.5em;
  	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;

@@ -54,7 +54,7 @@ var page={
 		'<tr><td><h2>Year of Car</h2></td></tr>'+
 		'<tr><td><input type="text" name="myYearOfCar" id="myYearOfCar" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Address</h2></td></tr>'+
-		'<tr><td><textarea rows="6" cols="27"  name="myAddress" id="myAddress"></textarea></td></tr>'+
+		'<tr><td><textarea rows="6" cols="20"  name="myAddress" id="myAddress"></textarea></td></tr>'+
 		'<tr><td><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
@@ -94,7 +94,8 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image:'this will be the upload img page',
+		image:'this will be the upload img page'+
+				'<img  class="next_btn" src="img/next_btn.png"/>',
 		// page 5 google maps page
 		maps: 'this is the map',
 		// page 6
@@ -157,7 +158,7 @@ var page={
 		online:function(){
 			$('#loginbut').click(function(){
 				//calls loginuser.php to submit
-				$.post("php/loginuser.php", {
+				$.post("http://www.a-chandra.com/ICBC/loginuser.php", {
 					name:$("#username").val(),
 					pass:$("#password").val(),
 				}, 
@@ -196,10 +197,11 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
+
 													page.go(page.image)
 													//put camera stuff here************
 													//*****temp to go next page
-													$('.next_but').click(function(){
+													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
 														if(page.num==2){
 															page.num =3;
@@ -224,7 +226,7 @@ var page={
 													if(page.num==4){
 															page.go(page.review);
 															$(document).on('click', '#reviewSub', function(){
-																$.post("php/other.php", {
+																$.post("http://www.a-chandra.com/ICBC/other.php", {
 																	plateProvince:other.plateProvince,
 																	licensePlate:other.licensePlate,
 																	makeOfCar:other.makeOfCar,
@@ -279,7 +281,6 @@ var page={
 
 
 $(document).ready(function(){
-	$("body").append("hi")
 	if(page.num==-1){
 		page.go(page.login)
 		//this is the not register_btn on the login page
@@ -349,7 +350,7 @@ $(document).ready(function(){
 							my.yearOfCar =myYearofcar;
 							my.address =meAddress;
 							// post to register.php
-							$.post("php/register.php", {	
+							$.post("http://www.a-chandra.com/ICBC/register.php", {	
 								userName:my.userName,
 								pass:my.password,
 								email:my.email,
