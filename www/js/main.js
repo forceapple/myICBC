@@ -157,7 +157,7 @@ var page={
 		online:function(){
 			$('#loginbut').click(function(){
 				//calls loginuser.php to submit
-				$.post("php/loginuser.php", {
+				$.post("http://www.a-chandra.com/ICBC/loginuser.php", {
 					name:$("#username").val(),
 					pass:$("#password").val(),
 				}, 
@@ -224,7 +224,7 @@ var page={
 													if(page.num==4){
 															page.go(page.review);
 															$(document).on('click', '#reviewSub', function(){
-																$.post("php/other.php", {
+																$.post("http://www.a-chandra.com/ICBC/other.php", {
 																	plateProvince:other.plateProvince,
 																	licensePlate:other.licensePlate,
 																	makeOfCar:other.makeOfCar,
@@ -349,7 +349,7 @@ $(document).ready(function(){
 							my.yearOfCar =myYearofcar;
 							my.address =meAddress;
 							// post to register.php
-							$.post("php/register.php", {	
+							$.post("http://www.a-chandra.com/ICBC/register.php", {	
 								userName:my.userName,
 								pass:my.password,
 								email:my.email,
