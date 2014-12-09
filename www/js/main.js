@@ -104,6 +104,20 @@ var page={
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
+		'<table id="otherReview" >'+
+		'<tr><td>'+other.plateProvince+'</td></tr>'+
+		'<tr><td>'+other.licensePlate+'</td></tr>'+
+		'<tr><td>'+other.makeOfCar+'</td></tr>'+
+		'<tr><td>'+other.model_of_car+'</td></tr>'+
+		'<tr><td>'+other.year_of_car+'</td></tr>'+
+		'<tr><td>'+other.first_name+'</td></tr>'+
+		'<tr><td>'+other.last_name+'</td></tr>'+
+		'<tr><td>'+other.license_number+'</td></tr>'+
+		'<tr><td>'+other.address+'</td></tr>'+
+		'<tr><td>'+other.phone_number+'</td></tr>'+
+		'<tr><td>'+other.comments+'</td></tr>'+
+ 		'</table>'+
+ 		
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
