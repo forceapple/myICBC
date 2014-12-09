@@ -96,8 +96,8 @@ var page={
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
-		'<img  class="next_btn" src="img/next_btn.png"/>'+
-		'<img  id="takePhoto" src="img/next_btn.png"/>'
+		'<img  id="takePhoto" src="img/next_btn.png"/>'+
+		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
 		maps: 'this is the map',
@@ -226,7 +226,8 @@ var page={
 													
 													//page.go(page.image)
 													//put camera stuff here************
-													page.takephoto();
+													page.go(page.image)
+													page.capAppend();
 													//to go next page
 													$(document).on('click', '#takePhoto', function(){
 														page.takephoto();	
@@ -235,25 +236,13 @@ var page={
 														console.log(page.num)
 														if(page.num==2){
 															page.num =3;
-															//page.go(page.maps)
-														}else if (page.num==3){
-															page.num=4
 														}
-														//camera stuff end*****************
-													//map page function-----------------
-													if(page.num ==3){
-														console.log(page.num)
-														page.go(page.maps)
-														//put map stuff here*****************
-														
-														
-														//map stuff ends***********************
-																					
+															
 														
 													}
 													
 //Review page										Review page functions------------------	
-													if(page.num==4){
+													if(page.num==3){
 															page.go(page.review);
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
