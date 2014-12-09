@@ -1,5 +1,15 @@
 var other={
-
+plateProvince:null,
+licensePlate:null,
+makeOfCar:null,
+model_of_car:null,
+year_of_car:null,
+first_name:null,
+last_name:null,
+license_number:null,
+address:null,
+phone_number:null,
+comments:null
 };
 var taken=0;
 var my={
