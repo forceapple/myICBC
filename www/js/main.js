@@ -104,17 +104,8 @@ var page={
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
 		'<div class="reviewBlock">'+
-		'<p>'+other.plateProvince+'</p>'+
-		'<p>'+other.licensePlate+'</p>'+
-		'<p>'+other.makeOfCar+'</p>'+
-		'<p>'+other.modelOfCar+'</p>'+
-		'<p>'+other.yearOfCar+'</p>'+
-		'<p>'+other.firstName+'</p>'+
-		'<p>'+other.lastName+'</p>'+
-		'<p>'+other.licenseNumber+'</p>'+
-		'<p>'+other.address+'</p>'+
-		'<p>'+other.phoneNumber+'</p>'+
-		'<p>'+other.details+'</p>'+
+		'<div id="otherReview">'+
+		'</div>'+
  		'</div>'+
 
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
@@ -269,6 +260,10 @@ var page={
 //Review page										Review page functions------------------	
 													if(page.num==3){
 															page.go(page.review);
+															for(i in other){
+																$('#otherReview').append(other[i])
+															}
+																
 															console.log(other)
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
