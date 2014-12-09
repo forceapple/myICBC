@@ -1,15 +1,4 @@
 var other={
-plateProvince:null,
-licensePlate:null,
-makeOfCar:null,
-model_of_car:null,
-year_of_car:null,
-first_name:null,
-last_name:null,
-license_number:null,
-address:null,
-phone_number:null,
-comments:null
 };
 var taken=0;
 var my={
@@ -115,17 +104,16 @@ var page={
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
 		'<table id="otherReview" >'+
-		'<tr><td>'+other.plateProvince+'</td></tr>'+
 		'<tr><td>'+other.licensePlate+'</td></tr>'+
 		'<tr><td>'+other.makeOfCar+'</td></tr>'+
 		'<tr><td>'+other.model_of_car+'</td></tr>'+
 		'<tr><td>'+other.year_of_car+'</td></tr>'+
-		'<tr><td>'+other.first_name+'</td></tr>'+
-		'<tr><td>'+other.last_name+'</td></tr>'+
-		'<tr><td>'+other.license_number+'</td></tr>'+
+		'<tr><td>'+other.firstName+'</td></tr>'+
+		'<tr><td>'+other.lastName+'</td></tr>'+
+		'<tr><td>'+other.licenseNumber+'</td></tr>'+
 		'<tr><td>'+other.address+'</td></tr>'+
-		'<tr><td>'+other.phone_number+'</td></tr>'+
-		'<tr><td>'+other.comments+'</td></tr>'+
+		'<tr><td>'+other.phoneNumber+'</td></tr>'+
+		'<tr><td>'+other.details+'</td></tr>'+
  		'</table>'+
 
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
