@@ -174,7 +174,7 @@ var page={
 				}else if(last_name==""){
 					$('#otherError').text("Last name field is required")
 					window.scrollTo(0, 0);
-				}else if(detail=="" || detail=="Please write as detail as possible"){
+				}else if(detail=="" || detail=="Please describe the event in detail"){
 					$('#otherError').text("Details/Comments field is required")
 					window.scrollTo(0, 0);
 				}else{
