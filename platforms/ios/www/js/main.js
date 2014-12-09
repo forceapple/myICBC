@@ -90,7 +90,7 @@ var page={
 		'<tr><td><h2>Phone Number</h2></td></tr>'+
 		'<tr><td><input type="text" name="phoneNumber" id="phoneNumber" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Details/Comments</h2></td></tr>'+
-		'<tr><td><textarea rows="6" cols="15"  name="details" id="details">Please write as detail as possible</textarea></td></tr>'+
+		'<tr><td><textarea rows="6" cols="23"  name="details" id="details">Please describe the event in detail.</textarea></td></tr>'+
 		'<tr><td><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
@@ -103,19 +103,10 @@ var page={
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
-		'<table id="otherReview" >'+
-		'<tr><td>'+other.plateProvince+'</td></tr>'+
-		'<tr><td>'+other.licensePlate+'</td></tr>'+
-		'<tr><td>'+other.makeOfCar+'</td></tr>'+
-		'<tr><td>'+other.modelOfCar+'</td></tr>'+
-		'<tr><td>'+other.yearOfCar+'</td></tr>'+
-		'<tr><td>'+other.firstName+'</td></tr>'+
-		'<tr><td>'+other.lastName+'</td></tr>'+
-		'<tr><td>'+other.licenseNumber+'</td></tr>'+
-		'<tr><td>'+other.address+'</td></tr>'+
-		'<tr><td>'+other.phoneNumber+'</td></tr>'+
-		'<tr><td>'+other.details+'</td></tr>'+
- 		'</table>'+
+		'<div class="reviewBlock">'+
+		'<div id="otherReview">'+
+		'</div>'+
+ 		'</div>'+
 
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
@@ -269,6 +260,12 @@ var page={
 //Review page										Review page functions------------------	
 													if(page.num==3){
 															page.go(page.review);
+															for(i in other){
+																for(h in other){
+																	$('#otherReview').append('<p class="otherInfo" id="'+i+h+'">'+other[i]+'</p>')
+																}
+															}
+																console.log(other)
 															console.log(other)
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {

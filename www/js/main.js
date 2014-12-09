@@ -90,7 +90,7 @@ var page={
 		'<tr><td><h2>Phone Number</h2></td></tr>'+
 		'<tr><td><input type="text" name="phoneNumber" id="phoneNumber" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Details/Comments</h2></td></tr>'+
-		'<tr><td><textarea rows="6" cols="15"  name="details" id="details">Please describe the event in detail</textarea></td></tr>'+
+		'<tr><td><textarea rows="6" cols="23"  name="details" id="details">Please describe the event in detail.</textarea></td></tr>'+
 		'<tr><td><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
