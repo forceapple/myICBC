@@ -200,7 +200,7 @@ var page={
 													navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 													    destinationType: Camera.DestinationType.FILE_URI,
 													    saveToPhotoAlbum:true
-													 }); 
+													    					 }); 
 
 													function onSuccess(url) {
 													    $("body").append("<img src='"+url+"' />");
