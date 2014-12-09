@@ -9,8 +9,8 @@ var user = {
 };
 
 var img ={
-
-};
+	
+}
 var page={
 		num:-1,
 		// login page, page 1
@@ -98,18 +98,8 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image:function(){
-			//this is the img the person took
-			for(var i in img){
-				$('#main').html('<img  class="capImg" width="30%" height="30%" src="'+img[i]+'"/>'
-
-
-					)
-			}
-
-			$('#main').append('<img  class="next_btn" src="img/next_btn.png"/>')
-		},
-				
+		image:'this will be the upload img page'+
+				'<img  class="next_btn" src="img/next_btn.png"/>',
 		// page 5 google maps page
 		maps: 'this is the map',
 		// page 6
@@ -217,14 +207,13 @@ var page={
 													 }); 
 
 													function onSuccess(url) {
-													   img.push(url);
-													   page.image();
+													    $("body").append("<img src='"+url+"' />");
 													}
 
 													function onFail(message) {
 													    alert('Failed because: ' + message);
 													}
-													
+													//page.go(page.image)
 													//put camera stuff here************
 													//*****temp to go next page
 													$(document).on('click', '.next_btn', function(){
