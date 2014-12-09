@@ -14,7 +14,7 @@ body{
 #login{
 margin-left: auto;
 margin-right: auto;
-width: 89.5%;
+width: 50;
 text-align: center;
 
  }
@@ -53,8 +53,7 @@ text-align: center;
  	display: block;
     margin-left: auto;
     margin-right: auto;
-	width: 50%;
-	height: 50%;
+	width: 73%;
 	
  }
 .errorMsg{

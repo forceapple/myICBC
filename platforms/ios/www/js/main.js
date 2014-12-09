@@ -1,5 +1,4 @@
 var other={
-
 };
 var taken=0;
 var my={
@@ -97,13 +96,27 @@ var page={
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
-		'<img  id="takePhoto" src="img/next_btn.png"/>'+
+		'<img  id="takePhoto" src="img/photo_btn.png"/>'+
 		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
+		'<table id="otherReview" >'+
+		'<tr><td>'+other.plateProvince+'</td></tr>'+
+		'<tr><td>'+other.licensePlate+'</td></tr>'+
+		'<tr><td>'+other.makeOfCar+'</td></tr>'+
+		'<tr><td>'+other.modelOfCar+'</td></tr>'+
+		'<tr><td>'+other.yearOfCar'</td></tr>'+
+		'<tr><td>'+other.firstName+'</td></tr>'+
+		'<tr><td>'+other.lastName+'</td></tr>'+
+		'<tr><td>'+other.licenseNumber+'</td></tr>'+
+		'<tr><td>'+other.address+'</td></tr>'+
+		'<tr><td>'+other.phoneNumber+'</td></tr>'+
+		'<tr><td>'+other.details+'</td></tr>'+
+ 		'</table>'+
+
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
@@ -180,12 +193,12 @@ var page={
 					//$('#main').html(page.image);
 					//this.go(page.image);
 					page.num =2;
+					console.log(other)
 				}
 
 		},
 		online:function(){
 			$('#loginbut').click(function(){
-				user.logged_in=true;
 				//calls loginuser.php to submit
 				$.post("http://www.a-chandra.com/ICBC/loginuser.php", {
 					name:$("#username").val(),
@@ -232,13 +245,16 @@ var page={
 													page.go(page.image)
 													page.capAppend();
 													//to go next page
-													if(taken>=3){
-														alert("You can only take 3 photos");
-													}else{
-														$(document).on('click', '#takePhoto', function(){
+													
+													$(document).on('click', '#takePhoto', function(){
+														if(taken>2){
+															alert("You can only take 3 photos");
+														}else{
 															page.takephoto();	
-														})
-													}
+														}
+														
+													})
+													
 													
 													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
@@ -253,6 +269,7 @@ var page={
 //Review page										Review page functions------------------	
 													if(page.num==3){
 															page.go(page.review);
+															console.log(other)
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
 																	plateProvince:other.plateProvince,
