@@ -227,7 +227,7 @@ var page={
 													//page.go(page.image)
 													//put camera stuff here************
 													page.go(page.image)
-													//page.capAppend();
+													page.capAppend();
 													//to go next page
 													$(document).on('click', '#takePhoto', function(){
 														page.takephoto();	
@@ -236,10 +236,11 @@ var page={
 														console.log(page.num)
 														if(page.num==2){
 															page.num =3;
+															//page.go(page.maps)
 														}
-															
-														
-													}
+														//camera stuff end*****************
+													//map page function-----------------
+													
 													
 //Review page										Review page functions------------------	
 													if(page.num==3){
