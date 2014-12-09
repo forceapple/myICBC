@@ -103,19 +103,19 @@ var page={
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
-		'<table id="otherReview" >'+
-		'<tr><td>'+other.plateProvince+'</td></tr>'+
-		'<tr><td>'+other.licensePlate+'</td></tr>'+
-		'<tr><td>'+other.makeOfCar+'</td></tr>'+
-		'<tr><td>'+other.modelOfCar+'</td></tr>'+
-		'<tr><td>'+other.yearOfCar+'</td></tr>'+
-		'<tr><td>'+other.firstName+'</td></tr>'+
-		'<tr><td>'+other.lastName+'</td></tr>'+
-		'<tr><td>'+other.licenseNumber+'</td></tr>'+
-		'<tr><td>'+other.address+'</td></tr>'+
-		'<tr><td>'+other.phoneNumber+'</td></tr>'+
-		'<tr><td>'+other.details+'</td></tr>'+
- 		'</table>'+
+		'<div class="reviewBlock">'
+		'<p>'+other.plateProvince+'</p>'+
+		'<p>'+other.licensePlate+'</p>'+
+		'<p>'+other.makeOfCar+'</p>'+
+		'<p>'+other.modelOfCar+'</p>'+
+		'<p>'+other.yearOfCar+'</p>'+
+		'<p>'+other.firstName+'</p>'+
+		'<p>'+other.lastName+'</p>'+
+		'<p>'+other.licenseNumber+'</p>'+
+		'<p>'+other.address+'</p>'+
+		'<p>'+other.phoneNumber+'</p>'+
+		'<p>'+other.details+'</p>'+
+ 		'</div>'+
 
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
