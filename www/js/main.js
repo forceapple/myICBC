@@ -95,7 +95,8 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image: '<img  class="next_btn" src="img/next_btn.png"/>'
+		image: '<div id="capImgs"></div>'
+		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
 		maps: 'this is the map',
@@ -108,7 +109,7 @@ var page={
 		// functions -----------------------------------
 		capAppend:function(){
 			for(var i in capture){
-				$('#main').append('<img  class="capturePic" src="'+capture[i]+'"/>')
+				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " src="'+capture[i]+'"/>')
 			}
 		},
 		go:function(thispage){
