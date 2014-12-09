@@ -233,9 +233,8 @@ var page={
 													//to go next page
 													
 													$(document).on('click', '#takePhoto', function(){
-														if(taken>3){
+														if(taken>2){
 															alert("You can only take 3 photos");
-															$('#main').append('You can only take 3 photos')
 														}else{
 															page.takephoto();	
 														}
