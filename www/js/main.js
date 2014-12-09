@@ -261,7 +261,9 @@ var page={
 													if(page.num==3){
 															page.go(page.review);
 															for(i in other){
-																$('#otherReview').append(other[i])
+																for(h in other){
+																	$('#otherReview').append('<p class="otherInfo" id="'+i+h+'">'+other[i]+'</p>')
+																}
 															}
 																console.log(other)
 															console.log(other)
