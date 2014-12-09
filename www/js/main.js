@@ -231,12 +231,12 @@ var page={
 													page.go(page.image)
 													page.capAppend();
 													//to go next page
-													if(taken<=3){
+													if(taken>=3){
+														alert("You can only take 3 photos");
+													}else{
 														$(document).on('click', '#takePhoto', function(){
 															page.takephoto();	
 														})
-													}else{
-														alert("You can only take 3 photos");
 													}
 													
 													$(document).on('click', '.next_btn', function(){
