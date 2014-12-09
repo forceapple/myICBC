@@ -7,6 +7,7 @@ var my={
 var user = {
 	
 };
+var capture =[];
 var page={
 		num:-1,
 		// login page, page 1
@@ -94,8 +95,8 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image:'this will be the upload img page'+
-				'<img  class="next_btn" src="img/next_btn.png"/>',
+		image: page.capAppend()
+		,
 		// page 5 google maps page
 		maps: 'this is the map',
 		// page 6
@@ -105,6 +106,11 @@ var page={
 		//page 7
 		thankyou:'thank you page',
 		// functions -----------------------------------
+		capAppend:function(){
+			for(var i in capture){
+				$('#main').append('<img  class="capturePic" src="'+capture[i]+'"/>')
+			}
+		},
 		go:function(thispage){
 			$('#main').html(thispage);
 		},
@@ -203,7 +209,9 @@ var page={
 													    					 }); 
 
 													function onSuccess(url) {
-													    $("body").append("<img src='"+url+"' />");
+													    capture.push(url)
+													    page.go(page.image)
+													    //$("body").append("<img src='"+url+"' />");
 													}
 
 													function onFail(message) {
