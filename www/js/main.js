@@ -117,7 +117,7 @@ var page={
 		'<tr><td>'+other.phone_number+'</td></tr>'+
 		'<tr><td>'+other.comments+'</td></tr>'+
  		'</table>'+
- 		
+
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
@@ -269,6 +269,7 @@ var page={
 //Review page										Review page functions------------------	
 													if(page.num==3){
 															page.go(page.review);
+															console.log(other)
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
 																	plateProvince:other.plateProvince,
