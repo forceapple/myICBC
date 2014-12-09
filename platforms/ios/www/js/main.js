@@ -55,7 +55,7 @@ var page={
 		'<tr><td><h2>Year of Car</h2></td></tr>'+
 		'<tr><td><input type="text" name="myYearOfCar" id="myYearOfCar" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Address</h2></td></tr>'+
-		'<tr><td><textarea rows="6" cols="20"  name="myAddress" id="myAddress"></textarea></td></tr>'+
+		'<tr><td><textarea rows="6" cols="15"  name="myAddress" id="myAddress"></textarea></td></tr>'+
 		'<tr><td><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
@@ -90,7 +90,7 @@ var page={
 		'<tr><td><h2>Phone Number</h2></td></tr>'+
 		'<tr><td><input type="text" name="phoneNumber" id="phoneNumber" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Details/Comments</h2></td></tr>'+
-		'<tr><td><textarea rows="6" cols="27"  name="details" id="details">Please write as detail as possible</textarea></td></tr>'+
+		'<tr><td><textarea rows="6" cols="20"  name="details" id="details">Please write as detail as possible</textarea></td></tr>'+
 		'<tr><td><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
