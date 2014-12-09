@@ -95,7 +95,7 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image: '<div id="capImgs"></div>'
+		image: '<div id="capImgs"></div>'+
 		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
