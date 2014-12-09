@@ -7,10 +7,6 @@ var my={
 var user = {
 	
 };
-
-var img ={
-	
-}
 var page={
 		num:-1,
 		// login page, page 1
