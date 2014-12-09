@@ -231,7 +231,7 @@ var page={
 													page.go(page.image)
 													page.capAppend();
 													//to go next page
-													if(taken<3){
+													if(taken<=3){
 														$(document).on('click', '#takePhoto', function(){
 															page.takephoto();	
 														})
@@ -308,6 +308,7 @@ var page={
 
 
 $(document).ready(function(){
+	user.logged_in=true;
 	if(page.num==-1){
 		page.go(page.login)
 		//this is the not register_btn on the login page
