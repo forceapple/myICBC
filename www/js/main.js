@@ -185,7 +185,6 @@ var page={
 		},
 		online:function(){
 			$('#loginbut').click(function(){
-				user.logged_in=true;
 				//calls loginuser.php to submit
 				$.post("http://www.a-chandra.com/ICBC/loginuser.php", {
 					name:$("#username").val(),
