@@ -96,7 +96,8 @@ var page={
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
-		'<img  class="next_btn" src="img/next_btn.png"/>'
+		'<img  class="next_btn" src="img/next_btn.png"/>'+
+		'<img  id="takePhoto" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
 		maps: 'this is the map',
@@ -107,6 +108,24 @@ var page={
 		//page 7
 		thankyou:'thank you page',
 		// functions -----------------------------------
+		takephoto:function(){
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+			destinationType: Camera.DestinationType.FILE_URI,
+			saveToPhotoAlbum:true
+			}); 
+
+			function onSuccess(url) {
+				capture.push(url)
+				page.go(page.image)
+				page.capAppend();
+				//$("body").append("<img src='"+url+"' />");
+			}
+
+			function onFail(message) {
+				alert('Failed because: ' + message);
+			}
+
+		},
 		capAppend:function(){
 			for(var i in capture){
 				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " src="'+capture[i]+'"/>')
@@ -204,24 +223,14 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
-													navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-													    destinationType: Camera.DestinationType.FILE_URI,
-													    saveToPhotoAlbum:true
-													    					 }); 
-
-													function onSuccess(url) {
-													    capture.push(url)
-													    page.go(page.image)
-													    page.capAppend();
-													    //$("body").append("<img src='"+url+"' />");
-													}
-
-													function onFail(message) {
-													    alert('Failed because: ' + message);
-													}
+													
 													//page.go(page.image)
 													//put camera stuff here************
-													//*****temp to go next page
+													page.takephoto();
+													//to go next page
+													$(document).on('click', '#takePhoto', function(){
+														page.takephoto();	
+													}
 													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
 														if(page.num==2){
