@@ -104,7 +104,7 @@ var page={
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
 		'<table id="otherReview" >'+
-		'<tr><td>'+other.plateProvince,+'</td></tr>'+
+		'<tr><td>'+other.plateProvince+'</td></tr>'+
 		'<tr><td>'+other.licensePlate+'</td></tr>'+
 		'<tr><td>'+other.makeOfCar+'</td></tr>'+
 		'<tr><td>'+other.modelOfCar+'</td></tr>'+
