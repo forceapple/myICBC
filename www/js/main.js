@@ -204,6 +204,7 @@ var page={
 					//$('#main').html(page.image);
 					//this.go(page.image);
 					page.num =2;
+					console.log(other)
 				}
 
 		},
