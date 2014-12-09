@@ -1,6 +1,7 @@
 var other={
 
 };
+var taken=0;
 var my={
 	
 };
@@ -116,6 +117,7 @@ var page={
 
 			function onSuccess(url) {
 				capture.push(url)
+				taken++;
 				page.go(page.image)
 				page.capAppend();
 				//$("body").append("<img src='"+url+"' />");
@@ -229,9 +231,14 @@ var page={
 													page.go(page.image)
 													page.capAppend();
 													//to go next page
-													$(document).on('click', '#takePhoto', function(){
-														page.takephoto();	
-													})
+													if(taken<3){
+														$(document).on('click', '#takePhoto', function(){
+															page.takephoto();	
+														})
+													}else{
+														alert("You can only take 3 photos");
+													}
+													
 													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
 														if(page.num==2){
