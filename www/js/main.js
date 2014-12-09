@@ -227,7 +227,7 @@ var page={
 													//page.go(page.image)
 													//put camera stuff here************
 													page.go(page.image)
-													page.capAppend();
+													//page.capAppend();
 													//to go next page
 													$(document).on('click', '#takePhoto', function(){
 														page.takephoto();	
