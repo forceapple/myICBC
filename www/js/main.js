@@ -230,7 +230,7 @@ var page={
 													//to go next page
 													$(document).on('click', '#takePhoto', function(){
 														page.takephoto();	
-													}
+													})
 													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
 														if(page.num==2){
