@@ -104,10 +104,11 @@ var page={
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
 		'<table id="otherReview" >'+
+		'<tr><td>'+other.plateProvince,+'</td></tr>'+
 		'<tr><td>'+other.licensePlate+'</td></tr>'+
 		'<tr><td>'+other.makeOfCar+'</td></tr>'+
-		'<tr><td>'+other.model_of_car+'</td></tr>'+
-		'<tr><td>'+other.year_of_car+'</td></tr>'+
+		'<tr><td>'+other.modelOfCar+'</td></tr>'+
+		'<tr><td>'+other.yearOfCar'</td></tr>'+
 		'<tr><td>'+other.firstName+'</td></tr>'+
 		'<tr><td>'+other.lastName+'</td></tr>'+
 		'<tr><td>'+other.licenseNumber+'</td></tr>'+
