@@ -1,12 +1,14 @@
 var other={
 
 };
+var taken=0;
 var my={
 	
 };
 var user = {
 	
 };
+var capture =[];
 var page={
 		num:-1,
 		// login page, page 1
@@ -94,8 +96,10 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image:'this will be the upload img page'+
-				'<img  class="next_btn" src="img/next_btn.png"/>',
+		image: '<div id="capImgs"></div>'+
+		'<img  id="takePhoto" src="img/next_btn.png"/>'+
+		'<img  class="next_btn" src="img/next_btn.png"/>'
+		,
 		// page 5 google maps page
 		maps: 'this is the map',
 		// page 6
@@ -105,6 +109,30 @@ var page={
 		//page 7
 		thankyou:'thank you page',
 		// functions -----------------------------------
+		takephoto:function(){
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+			destinationType: Camera.DestinationType.FILE_URI,
+			saveToPhotoAlbum:true
+			}); 
+
+			function onSuccess(url) {
+				capture.push(url)
+				taken++;
+				page.go(page.image)
+				page.capAppend();
+				//$("body").append("<img src='"+url+"' />");
+			}
+
+			function onFail(message) {
+				alert('Failed because: ' + message);
+			}
+
+		},
+		capAppend:function(){
+			for(var i in capture){
+				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " src="'+capture[i]+'"/>')
+			}
+		},
 		go:function(thispage){
 			$('#main').html(thispage);
 		},
@@ -157,6 +185,7 @@ var page={
 		},
 		online:function(){
 			$('#loginbut').click(function(){
+				user.logged_in=true;
 				//calls loginuser.php to submit
 				$.post("http://www.a-chandra.com/ICBC/loginuser.php", {
 					name:$("#username").val(),
@@ -197,44 +226,32 @@ var page={
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
-													navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-													    destinationType: Camera.DestinationType.FILE_URI,
-													    saveToPhotoAlbum:true
-													    					 }); 
-
-													function onSuccess(url) {
-													    $("body").append("<img src='"+url+"' />");
-													}
-
-													function onFail(message) {
-													    alert('Failed because: ' + message);
-													}
+													
 													//page.go(page.image)
 													//put camera stuff here************
-													//*****temp to go next page
+													page.go(page.image)
+													page.capAppend();
+													//to go next page
+													if(taken>=3){
+														alert("You can only take 3 photos");
+													}else{
+														$(document).on('click', '#takePhoto', function(){
+															page.takephoto();	
+														})
+													}
+													
 													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
 														if(page.num==2){
 															page.num =3;
 															//page.go(page.maps)
-														}else if (page.num==3){
-															page.num=4
 														}
 														//camera stuff end*****************
 													//map page function-----------------
-													if(page.num ==3){
-														console.log(page.num)
-														page.go(page.maps)
-														//put map stuff here*****************
-														
-														
-														//map stuff ends***********************
-																					
-														
-													}
+													
 													
 //Review page										Review page functions------------------	
-													if(page.num==4){
+													if(page.num==3){
 															page.go(page.review);
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
