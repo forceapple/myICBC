@@ -263,7 +263,7 @@ var page={
 															for(i in other){
 																$('#otherReview').append(other[i])
 															}
-																
+																console.log(other)
 															console.log(other)
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
