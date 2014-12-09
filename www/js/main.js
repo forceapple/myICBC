@@ -95,7 +95,7 @@ var page={
  		'</table>'+
  		'</div>',
 		// page 4 photo page
-		image: page.capAppend()
+		image: '<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
 		maps: 'this is the map',
@@ -211,6 +211,7 @@ var page={
 													function onSuccess(url) {
 													    capture.push(url)
 													    page.go(page.image)
+													    page.capAppend();
 													    //$("body").append("<img src='"+url+"' />");
 													}
 
