@@ -108,7 +108,7 @@ var page={
 		'<tr><td>'+other.licensePlate+'</td></tr>'+
 		'<tr><td>'+other.makeOfCar+'</td></tr>'+
 		'<tr><td>'+other.modelOfCar+'</td></tr>'+
-		'<tr><td>'+other.yearOfCar'</td></tr>'+
+		'<tr><td>'+other.yearOfCar+'</td></tr>'+
 		'<tr><td>'+other.firstName+'</td></tr>'+
 		'<tr><td>'+other.lastName+'</td></tr>'+
 		'<tr><td>'+other.licenseNumber+'</td></tr>'+
