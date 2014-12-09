@@ -103,7 +103,7 @@ var page={
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
-		'<div class="reviewBlock">'
+		'<div class="reviewBlock">'+
 		'<p>'+other.plateProvince+'</p>'+
 		'<p>'+other.licensePlate+'</p>'+
 		'<p>'+other.makeOfCar+'</p>'+
