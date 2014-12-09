@@ -97,7 +97,7 @@ var page={
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
-		'<img  id="takePhoto" src="img/next_btn.png"/>'+
+		'<img  id="takePhoto" src="img/photo_btn.png"/>'+
 		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page
@@ -232,13 +232,17 @@ var page={
 													page.go(page.image)
 													page.capAppend();
 													//to go next page
-													if(taken>=3){
-														alert("You can only take 3 photos");
-													}else{
-														$(document).on('click', '#takePhoto', function(){
+													
+													$(document).on('click', '#takePhoto', function(){
+														if(taken>3){
+															alert("You can only take 3 photos");
+															$('#main').append('You can only take 3 photos')
+														}else{
 															page.takephoto();	
-														})
-													}
+														}
+														
+													})
+													
 													
 													$(document).on('click', '.next_btn', function(){
 														console.log(page.num)
