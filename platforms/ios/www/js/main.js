@@ -29,7 +29,7 @@ var page={
 		//page 1.5 register page
 		register:'<h1 class="heading">Register</h1>'+
 		'<div id="me">'+
-		'<div id="message">Please fill out the following</div>'+
+		'<div id="message">Please enter the following information</div>'+
 		'<div id="regError" class="errorMsg"></div>'+
 		'<table id="meTable" >'+
 		'<tr><td><h2>Username</h2></td></tr>'+
@@ -55,7 +55,7 @@ var page={
 		'<tr><td><h2>Year of Car</h2></td></tr>'+
 		'<tr><td><input type="text" name="myYearOfCar" id="myYearOfCar" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Address</h2></td></tr>'+
-		'<tr><td><textarea rows="6" cols="15"  name="myAddress" id="myAddress"></textarea></td></tr>'+
+		'<tr><td><textarea rows="1" cols="18"  name="myAddress" id="myAddress"></textarea></td></tr>'+
 		'<tr><td><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
@@ -184,6 +184,7 @@ var page={
 			
 			var detail =$('#details').val();
 				if(L_plate==""){
+					console.log("hi")
 					$('#otherError').text("license plate field is required")
 					window.scrollTo(0, 0);
 				}else if(first_name==""){
@@ -210,7 +211,9 @@ var page={
 					other.details=comments;
 					//$('#main').html(page.image);
 					//this.go(page.image);
-					
+					if(page.num==1){
+						page.num =2;
+					}
 					console.log(other)
 				}
 
@@ -255,7 +258,7 @@ var page={
 
 												page.claimFunctions();
 												//makes page.num=2
-												page.num =2;
+												
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
