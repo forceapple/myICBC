@@ -340,7 +340,7 @@ var page={
 															})
 															$(document).on('click', '#reviewSub', function(){
 																
-																page.uploadPhoto();
+																page.uploadPhoto(capture[0]);
 
 
 
