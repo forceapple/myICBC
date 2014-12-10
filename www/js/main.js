@@ -184,6 +184,7 @@ var page={
 			
 			var detail =$('#details').val();
 				if(L_plate==""){
+					console.log("hi")
 					$('#otherError').text("license plate field is required")
 					window.scrollTo(0, 0);
 				}else if(first_name==""){
@@ -210,7 +211,9 @@ var page={
 					other.details=comments;
 					//$('#main').html(page.image);
 					//this.go(page.image);
-					
+					if(page.num==1){
+						page.num =2;
+					}
 					console.log(other)
 				}
 
@@ -255,7 +258,7 @@ var page={
 
 												page.claimFunctions();
 												//makes page.num=2
-												page.num =2;
+												
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
