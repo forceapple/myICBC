@@ -103,16 +103,43 @@ var page={
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
-		'<div class="reviewBlock">'+
-		'<div id="otherReview">'+
-		'</div>'+
- 		'</div>'+
+			'<div class="reviewBlock">'+
+				'<div id="otherReview">'+
+					'<div id="edit"><img src="img/next_btn.png"/></div>'+
+				'</div>'+
+				'<div id="reviewPhoto"></div>'+
+ 			'</div>'+
 
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
 		thankyou:'thank you page',
 		// functions -----------------------------------
+		editother:function(){
+			$('#otherReview').html(
+				'<div id="save"><img src="img/next_btn.png"/></div>'+
+				'<input type="text" name="plateProvince" id="plateProvince" value="'+other.plateProvince+'"class="otherText"/>'+
+				'<input type="text" name="licensePlate" id="licensePlate" value="'+other.licensePlate+'"class="otherText"/>'+
+				'<input type="text" name="makeOfCar" id="makeOfCar" value="'+other.makeOfCar+'"class="otherText"/>'+
+				'<input type="text" name="modelOfCar" id="modelOfCar" value="'+other.modelOfCar+'"class="otherText"/>'+
+				'<input type="text" name="yearOfCar" id="yearOfCar" value="'+other.yearOfCar+'"class="otherText"/>'+
+				'<input type="text" name="firstName" id="firstName" value="'+other.firstName+'"class="otherText"/>'+
+				'<input type="text" name="lastName" id="lastName" value="'+other.lastName+'"class="otherText"/>'+
+				'<input type="text" name="licenseNumber" id="licenseNumber" value="'+other.licenseNumber+'"class="otherText"/>'+
+				'<input type="text" name="address" id="address" value="'+other.address+'"class="otherText"/>'+
+				'<input type="text" name="phoneNumber" id="phoneNumber" value="'+other.phoneNumber+'"class="otherText"/>'+
+				'<input type="text" name="details" id="details" value="'+other.details+'"class="otherText"/>'
+
+			)
+		},
+		reviewappend:function(){
+			for(i in other){
+				$('#otherReview').append('<div class="otherInfo">'+other[i]+'</div>')				
+			}
+			for(var i in capture){
+				$('#reviewPhoto').append('<img  class="capturePic" width="30%" height="30% " id="img'+i+'" src="'+capture[i]+'"/>')
+			}
+		},
 		takephoto:function(){
 			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 			destinationType: Camera.DestinationType.FILE_URI,
@@ -134,7 +161,7 @@ var page={
 		},
 		capAppend:function(){
 			for(var i in capture){
-				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " src="'+capture[i]+'"/>')
+				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " id="img'+i+'" src="'+capture[i]+'"/>')
 			}
 		},
 		go:function(thispage){
@@ -183,7 +210,7 @@ var page={
 					other.details=comments;
 					//$('#main').html(page.image);
 					//this.go(page.image);
-					page.num =2;
+					
 					console.log(other)
 				}
 
@@ -226,7 +253,9 @@ var page={
 											})
 										 	$(document).on('click', '#next_btn', function(){
 
-												page.claimFunctions();//makes page.num=2
+												page.claimFunctions();
+												//makes page.num=2
+												page.num =2;
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
@@ -260,13 +289,16 @@ var page={
 //Review page										Review page functions------------------	
 													if(page.num==3){
 															page.go(page.review);
-															for(i in other){
-																for(h in other){
-																	$('#otherReview').append('<p class="otherInfo" id="'+i+h+'">'+other[i]+'</p>')
-																}
-															}
-																console.log(other)
-															console.log(other)
+															page.reviewappend();
+															$(document).on('click', '#edit', function(){
+																page.editother();
+																
+															})
+															$(document).on('click', '#save', function(){
+																page.claimFunctions()
+																page.go(page.review)
+																page.reviewappend();
+															})
 															$(document).on('click', '#reviewSub', function(){
 																$.post("http://www.a-chandra.com/ICBC/other.php", {
 																	plateProvince:other.plateProvince,
