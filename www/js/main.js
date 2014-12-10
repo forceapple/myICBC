@@ -103,11 +103,12 @@ var page={
 		maps: 'this is the map',
 		// page 6
 		review:'<h1 class="heading">Review</h1>'+
-		'<div class="reviewBlock">'+
-		'<div id="otherReview">'+
-		'<div id="edit">edit</div>'+
-		'</div>'+
- 		'</div>'+
+			'<div class="reviewBlock">'+
+				'<div id="otherReview">'+
+					'<div id="edit"><img src="img/next_btn.png"/></div>'+
+				'</div>'+
+				'<div id="reviewPhoto"></div>'+
+ 			'</div>'+
 
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
@@ -116,7 +117,7 @@ var page={
 		// functions -----------------------------------
 		editother:function(){
 			$('#otherReview').html(
-				'<div id="save">Save</div>'+
+				'<div id="save"><img src="img/next_btn.png"/></div>'+
 				'<input type="text" name="plateProvince" id="plateProvince" value="'+other.plateProvince+'"class="otherText"/>'+
 				'<input type="text" name="licensePlate" id="licensePlate" value="'+other.licensePlate+'"class="otherText"/>'+
 				'<input type="text" name="makeOfCar" id="makeOfCar" value="'+other.makeOfCar+'"class="otherText"/>'+
@@ -134,6 +135,9 @@ var page={
 		reviewappend:function(){
 			for(i in other){
 				$('#otherReview').append('<div class="otherInfo">'+other[i]+'</div>')				
+			}
+			for(var i in capture){
+				$('#reviewPhoto').append('<img  class="capturePic" width="30%" height="30% " id="img'+i+'" src="'+capture[i]+'"/>')
 			}
 		},
 		takephoto:function(){
@@ -157,7 +161,7 @@ var page={
 		},
 		capAppend:function(){
 			for(var i in capture){
-				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " src="'+capture[i]+'"/>')
+				$('#capImgs').append('<img  class="capturePic" width="30%" height="30% " id="img'+i+'" src="'+capture[i]+'"/>')
 			}
 		},
 		go:function(thispage){
