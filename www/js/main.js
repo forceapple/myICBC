@@ -29,7 +29,7 @@ var page={
 		//page 1.5 register page
 		register:'<h1 class="heading">Register</h1>'+
 		'<div id="me">'+
-		'<div id="message">Please fill out the following</div>'+
+		'<div id="message">Please enter the following information</div>'+
 		'<div id="regError" class="errorMsg"></div>'+
 		'<table id="meTable" >'+
 		'<tr><td><h2>Username</h2></td></tr>'+
