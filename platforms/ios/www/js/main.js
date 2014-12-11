@@ -127,7 +127,6 @@ var page={
  
             var params = new Object();
             params.img= imageURI;
-            params.userId=user.userid;
             params.username = user.username;
             params.upCount = page.upCount;
             params.imgcount = page.imgcount;

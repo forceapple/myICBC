@@ -88,7 +88,10 @@ text-align: center;
 
 }
 #message{
-	font-size: 2em;
+	font-size: 1.5em;
+	font-family:Calibri;
+	text-align: center;
+	color:white;
 }
 #meTable {
 	padding: 0px;
