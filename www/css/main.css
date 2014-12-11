@@ -59,7 +59,7 @@ text-align: center;
 .errorMsg{
 	font-family:Calibri;
 	color:red;
-	font-size:1em;
+	font-size:1.5em;
 	display: block;
 	margin-top: 10%;
 }
@@ -145,4 +145,11 @@ text-align: center;
 }
 #register_btn{
 	float: left;
+}
+.reviewBlock{
+	font-family: Calibri;
+	text-align: center;
+	color:white;
+	font-size: 1.1em;
+	
 }

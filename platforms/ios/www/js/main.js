@@ -56,7 +56,7 @@ var page={
 		'<tr><td><input type="text" name="myYearOfCar" id="myYearOfCar" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Address</h2></td></tr>'+
 		'<tr><td><textarea rows="1" cols="18"  name="myAddress" id="myAddress"></textarea></td></tr>'+
-		'<tr><td><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
+		'<tr><td><img  id="back_btn" src="img/back_btn.png"/><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
 		// page 2 landing page
@@ -91,11 +91,12 @@ var page={
 		'<tr><td><input type="text" name="phoneNumber" id="phoneNumber" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Details/Comments</h2></td></tr>'+
 		'<tr><td><textarea rows="6" cols="23"  name="details" id="details">Please describe the event in detail.</textarea></td></tr>'+
-		'<tr><td><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
+		'<tr><td><img  id="back_btn2" src="img/back_btn.png"/><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
+		'<img  id="back_btn3" src="img/back_btn.png"/>'+
 		'<img  id="takePhoto" src="img/photo_btn.png"/>'+
 		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
@@ -109,7 +110,7 @@ var page={
 				'</div>'+
 				'<div id="reviewPhoto"></div>'+
  			'</div>'+
-
+ 		'<img  id="back_btn4" src="img/back_btn.png"/>'+
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
@@ -288,6 +289,11 @@ var page={
 									page.go(page.home);
 									$(document).on('click', '#makeClaim', function(){
 										page.go(page.claim);
+										$(document).on('click', '#back_btn2', function(){
+											page.go(page.home)
+											page.online();
+											page.num=0
+										})
 										page.num =1;
 
 						//Claim page	claim page functions ----------------  
@@ -308,6 +314,22 @@ var page={
 													//page.go(page.image)
 													//put camera stuff here************
 													page.go(page.image)
+													$(document).on('click', '#back_btn3', function(){
+														page.go(page.claim)
+														$('#plateProvince').attr('value',other.plateProvince);
+														$('#licensePlate').attr('value',other.licensePlate);
+														$('#makeOfCar').attr('value',other.makeOfCar);
+														$('#modelOfCar').attr('value',other.modelOfCar);
+														$('#yearOfCar').attr('value',other.yearOfCar);
+														$('#firstName').attr('value',other.firstName);
+														$('#lastName').attr('value',other.lastName);
+														$('#licenseNumber').attr('value',other.licenseNumber);
+														$('#address').attr('value',other.address);
+														$('#phoneNumber').attr('value',other.phoneNumber);
+														$('#details').attr('value',other.details);
+														page.online();
+														page.num=1
+													})
 													page.capAppend();
 													//to go next page
 													
@@ -335,6 +357,11 @@ var page={
 													if(page.num==3){
 															page.go(page.review);
 															page.reviewappend();
+															$(document).on('click', '#back_btn4', function(){
+																page.go(page.image)
+																page.online();
+																page.num=1
+															})
 															$(document).on('click', '#edit', function(){
 																page.editother();
 																
@@ -417,6 +444,10 @@ $(document).ready(function(){
 		//this is the not register_btn on the login page
 			$('#NR').click(function(){
 				$('#main').html(page.register)
+				$("#back_btn").click(function(){
+					page.go(page.login)
+					page.online();
+				})
 				//register button on register_btn page
 					$('#register_btn').click(function(){
 						var meUsername = $('#myUsername').val();
