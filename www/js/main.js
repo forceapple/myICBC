@@ -61,7 +61,8 @@ var page={
  		'</div>',
 		// page 2 landing page
 		home:'<img id="logo" src="img/logo.png" />'+
-			'<img id="makeClaim" class="next_but" src="img/makeclaim_btn.png"/>'
+			'<img id="makeClaim" class="next_but" src="img/makeclaim_btn.png"/>'+
+			'<img id="logOut" src="img/logout_btn.png"/>'
 		,
 		// page 3 make a cliam page
 		claim:'<h1 class="heading">Step 1</h1>'+
@@ -149,9 +150,6 @@ var page={
             ft.upload(imageURI, "http://www.a-chandra.com/ICBC/other.php", win, fail, options);
 
             function win(r) {
-	            console.log("Code = " + r.responseCode);
-	            console.log("Response = " + r.response);
-	            console.log("Sent = " + r.bytesSent);
 	           page.go(page.thankyou);
 	        }
 	 
@@ -228,7 +226,6 @@ var page={
 			
 			var detail =$('#details').val();
 				if(L_plate==""){
-					console.log("hi")
 					$('#otherError').text("license plate field is required")
 					window.scrollTo(0, 0);
 				}else if(first_name==""){
@@ -258,7 +255,6 @@ var page={
 					if(page.num==1){
 						page.num =2;
 					}
-					console.log(other)
 				}
 
 		},
@@ -270,7 +266,6 @@ var page={
 					pass:$("#password").val(),
 				}, 
 				function(resp){
-					//console.log(resp);
 					resp = $.parseJSON(resp);
 					user.userid=resp.userid;
 					user.username = resp.username;
@@ -288,22 +283,22 @@ var page={
 						//Home page
 								if(page.num==0){
 									page.go(page.home);
+									$(document).on('click', '#logOut', function(){
+										location.reload();
+									})
 									$(document).on('click', '#makeClaim', function(){
 										page.go(page.claim);
 										page.online();
-										console.log(page.num)
 										page.num=1;
 										$(document).on('click', '#back_btn2', function(){
 											page.go(page.home)
-											page.online();
 											page.num=0
-											console.log(page.num)
+											page.online();											
 										})
 										page.num =1;
 
 						//Claim page	claim page functions ----------------  
 										if(page.num==1){
-											console.log(page.num);
 											//empty details input when clicked
 											$('#details').click(function(){
 												$('#details').val("");
@@ -333,9 +328,9 @@ var page={
 														$('#address').attr('value',other.address);
 														$('#phoneNumber').attr('value',other.phoneNumber);
 														$('#details').attr('value',other.details);
-														page.online();
 														page.num=1
-														console.log(page.num)
+														page.online();
+														
 													})
 													page.capAppend();
 													//to go next page
@@ -351,7 +346,6 @@ var page={
 													
 													
 													$(document).on('click', '.next_btn', function(){
-														console.log(page.num)
 														if(page.num==2){
 															page.num =3;
 															//page.go(page.maps)
@@ -365,10 +359,10 @@ var page={
 															page.go(page.review);
 															page.reviewappend();
 															$(document).on('click', '#back_btn4', function(){
-																page.go(page.image)
-																page.online();
+																//page.go(page.image)
 																page.num=2;
-																console.log(page.num)
+																page.online();
+																
 															})
 															$(document).on('click', '#edit', function(){
 																page.editother();
@@ -536,7 +530,6 @@ $(document).ready(function(){
 
 							}, 
 							function(resp){
-								//console.log(resp);
 								resp = $.parseJSON(resp);
 								user.errors=resp.errors
 								user.test=resp.test;
