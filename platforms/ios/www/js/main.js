@@ -96,8 +96,8 @@ var page={
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
-		'<img  id="back_btn3" src="img/back_btn.png"/>'+
 		'<img  id="takePhoto" src="img/photo_btn.png"/>'+
+		'<img  id="back_btn3" src="img/back_btn.png"/>'+
 		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
 		// page 5 google maps page

@@ -146,10 +146,17 @@ text-align: center;
 #register_btn{
 	float: left;
 }
+
 .reviewBlock{
 	font-family: Calibri;
 	text-align: center;
 	color:white;
 	font-size: 1.1em;
 	
+}
+
+
+#takePhoto{
+	margin-top: 200px;
+	margin-left: 8.3%;
 }
