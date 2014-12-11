@@ -289,15 +289,20 @@ var page={
 									page.go(page.home);
 									$(document).on('click', '#makeClaim', function(){
 										page.go(page.claim);
+										page.online();
+										console.log(page.num)
+										page.num=1;
 										$(document).on('click', '#back_btn2', function(){
 											page.go(page.home)
 											page.online();
 											page.num=0
+											console.log(page.num)
 										})
 										page.num =1;
 
 						//Claim page	claim page functions ----------------  
 										if(page.num==1){
+											console.log(page.num);
 											//empty details input when clicked
 											$('#details').click(function(){
 												$('#details').val("");
@@ -329,6 +334,7 @@ var page={
 														$('#details').attr('value',other.details);
 														page.online();
 														page.num=1
+														console.log(page.num)
 													})
 													page.capAppend();
 													//to go next page
@@ -360,7 +366,8 @@ var page={
 															$(document).on('click', '#back_btn4', function(){
 																page.go(page.image)
 																page.online();
-																page.num=1
+																page.num=2;
+																console.log(page.num)
 															})
 															$(document).on('click', '#edit', function(){
 																page.editother();
