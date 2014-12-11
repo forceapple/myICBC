@@ -56,7 +56,7 @@ var page={
 		'<tr><td><input type="text" name="myYearOfCar" id="myYearOfCar" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Address</h2></td></tr>'+
 		'<tr><td><textarea rows="1" cols="18"  name="myAddress" id="myAddress"></textarea></td></tr>'+
-		'<tr><td><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
+		'<tr><td><img  id="back_btn" src="img/back_btn.png"/><img  id="register_btn" src="img/register_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
 		// page 2 landing page
@@ -91,11 +91,12 @@ var page={
 		'<tr><td><input type="text" name="phoneNumber" id="phoneNumber" class="otherText" /></td></tr>'+
 		'<tr><td><h2>Details/Comments</h2></td></tr>'+
 		'<tr><td><textarea rows="6" cols="23"  name="details" id="details">Please describe the event in detail.</textarea></td></tr>'+
-		'<tr><td><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
+		'<tr><td><img  id="back_btn2" src="img/back_btn.png"/><img  id="next_btn" src="img/next_btn.png"/></td></tr>'+
  		'</table>'+
  		'</div>',
 		// page 4 photo page
 		image: '<div id="capImgs"></div>'+
+		'<img  id="back_btn3" src="img/back_btn.png"/>'+
 		'<img  id="takePhoto" src="img/photo_btn.png"/>'+
 		'<img  class="next_btn" src="img/next_btn.png"/>'
 		,
@@ -288,6 +289,11 @@ var page={
 									page.go(page.home);
 									$(document).on('click', '#makeClaim', function(){
 										page.go(page.claim);
+										$("#back_btn2").click(function(){
+											page.go(page.home)
+											page.online();
+											page.num=0
+										})
 										page.num =1;
 
 						//Claim page	claim page functions ----------------  
@@ -300,7 +306,11 @@ var page={
 
 												page.claimFunctions();
 												//makes page.num=2
-												
+												$("#back_btn2").click(function(){
+													page.go(page.home)
+													page.online();
+													page.num=0
+												})
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
@@ -417,6 +427,10 @@ $(document).ready(function(){
 		//this is the not register_btn on the login page
 			$('#NR').click(function(){
 				$('#main').html(page.register)
+				$("#back_btn").click(function(){
+					page.go(page.login)
+					page.online();
+				})
 				//register button on register_btn page
 					$('#register_btn').click(function(){
 						var meUsername = $('#myUsername').val();
