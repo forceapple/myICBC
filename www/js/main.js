@@ -124,6 +124,7 @@ var page={
             options.mimeType="image/jpeg";
  
             var params = new Object();
+            params.img= imageURI;
             params.username = user.username;
             params.upCount = page.upCount;
             params.imgcount = page.imgcount;
