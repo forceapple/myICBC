@@ -106,7 +106,7 @@ var page={
 		review:'<h1 class="heading">Review</h1>'+
 			'<div class="reviewBlock">'+
 				'<div id="otherReview">'+
-					'<div id="edit"><img src="img/next_btn.png"/></div>'+
+					//'<div id="edit"><img src="img/next_btn.png"/></div>'+
 				'</div>'+
 				'<div id="reviewPhoto"></div>'+
  			'</div>'+
