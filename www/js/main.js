@@ -66,7 +66,7 @@ var page={
 		// page 3 make a cliam page
 		claim:'<h1 class="heading">Step 1</h1>'+
 		'<div id="otherPerson">'+
-		'<div id="message">Other driver&#8216s info</div>'+
+		'<div id="message">Please insert OTHER driver&#8216s info</div>'+
 		'<div id="otherError" class="errorMsg"></div>'+
 		'<table id="otherTable" >'+
 		'<tr><td><h2>Plate Province</h2></td></tr>'+
@@ -114,7 +114,8 @@ var page={
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
-		thankyou:'<h1 class="heading">Thank You</h1>',
+		thankyou:'<h1 class="heading">Thank You</h1>'+
+		'<div id="message">Your claim has been submitted!</div>',
 		upCount:0,
 		imgcount:0,
 		// functions -----------------------------------
