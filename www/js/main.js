@@ -110,7 +110,7 @@ var page={
 				'</div>'+
 				'<div id="reviewPhoto"></div>'+
  			'</div>'+
-
+ 		'<img  id="back_btn4" src="img/back_btn.png"/>'+
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
@@ -289,7 +289,7 @@ var page={
 									page.go(page.home);
 									$(document).on('click', '#makeClaim', function(){
 										page.go(page.claim);
-										$("#back_btn2").click(function(){
+										$(document).on('click', '#back_btn2', function(){
 											page.go(page.home)
 											page.online();
 											page.num=0
@@ -306,11 +306,7 @@ var page={
 
 												page.claimFunctions();
 												//makes page.num=2
-												$("#back_btn2").click(function(){
-													page.go(page.home)
-													page.online();
-													page.num=0
-												})
+												
 						//Camera page			camera page functions ---------------
 
 												if(page.num ==2){
@@ -318,6 +314,22 @@ var page={
 													//page.go(page.image)
 													//put camera stuff here************
 													page.go(page.image)
+													$(document).on('click', '#back_btn3', function(){
+														page.go(page.claim)
+														$('#plateProvince').attr('value',other.plateProvince);
+														$('#licensePlate').attr('value',other.licensePlate);
+														$('#makeOfCar').attr('value',other.makeOfCar);
+														$('#modelOfCar').attr('value',other.modelOfCar);
+														$('#yearOfCar').attr('value',other.yearOfCar);
+														$('#firstName').attr('value',other.firstName);
+														$('#lastName').attr('value',other.lastName);
+														$('#licenseNumber').attr('value',other.licenseNumber);
+														$('#address').attr('value',other.address);
+														$('#phoneNumber').attr('value',other.phoneNumber);
+														$('#details').attr('value',other.details);
+														page.online();
+														page.num=1
+													})
 													page.capAppend();
 													//to go next page
 													
@@ -345,6 +357,11 @@ var page={
 													if(page.num==3){
 															page.go(page.review);
 															page.reviewappend();
+															$(document).on('click', '#back_btn4', function(){
+																page.go(page.image)
+																page.online();
+																page.num=1
+															})
 															$(document).on('click', '#edit', function(){
 																page.editother();
 																
