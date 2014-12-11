@@ -114,7 +114,48 @@ var page={
 		,
 		//page 7
 		thankyou:'thank you page',
+		upCount:0,
+		imgcount:0,
 		// functions -----------------------------------
+		uploadPhoto:function(imageURI){
+			 var options = new FileUploadOptions();
+            options.fileKey="img";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.username = user.username;
+            params.upCount = page.upCount;
+            params.imgcount = page.imgcount;
+            params.plateProvince = other.plateProvince;
+            params.licensePlate = other.licensePlate;
+            params.makeOfCar = other.makeOfCar;
+            params.modelOfCar = other.modelOfCar;
+            params.yearOfCar = other.yearOfCar;
+            params.firstName = other.firstName;
+            params.lastName = other.lastName;
+            params.licenseNumber = other.licenseNumber;
+            params.address = other.address;
+            params.phoneNumber = other.phoneNumber;
+            params.details = other.details;
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://www.a-chandra.com/ICBC/other.php", win, fail, options);
+
+            function win(r) {
+	            console.log("Code = " + r.responseCode);
+	            console.log("Response = " + r.response);
+	            console.log("Sent = " + r.bytesSent);
+	           page.go(page.thankyou);
+	        }
+	 
+	        function fail(error) {
+	            alert("An error has occurred: Code = " + error.code);
+	        }
+		},
 		editother:function(){
 			$('#otherReview').html(
 				'<div id="save"><img src="img/next_btn.png"/></div>'+
@@ -303,7 +344,19 @@ var page={
 																page.reviewappend();
 															})
 															$(document).on('click', '#reviewSub', function(){
-																$.post("http://www.a-chandra.com/ICBC/other.php", {
+																if(page.upCount==0){
+																	for(var i in capture){
+
+																		page.upCount=i+1;
+																		page.imgcount=i;
+																		page.uploadPhoto(capture[i]);
+																	}
+																}
+																
+
+
+
+																/*$.post("http://www.a-chandra.com/ICBC/other.php", {
 																	plateProvince:other.plateProvince,
 																	licensePlate:other.licensePlate,
 																	makeOfCar:other.makeOfCar,
@@ -329,7 +382,7 @@ var page={
 																
 																		}
 
-																	});
+																	});*/
 
 															})
 														}
