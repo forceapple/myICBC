@@ -113,7 +113,7 @@ var page={
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
-		thankyou:'thank you page',
+		thankyou:'<h1 class="heading">Thank You</h1>',
 		upCount:0,
 		imgcount:0,
 		// functions -----------------------------------

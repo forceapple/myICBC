@@ -113,7 +113,7 @@ var page={
 		'<img  id="reviewSub" src="img/submit-13.png"/>'
 		,
 		//page 7
-		thankyou:'thank you page',
+		thankyou:'<h1 class="heading">Thank You</h1>',
 		upCount:0,
 		imgcount:0,
 		// functions -----------------------------------
@@ -124,6 +124,7 @@ var page={
             options.mimeType="image/jpeg";
  
             var params = new Object();
+            params.img= imageURI;
             params.username = user.username;
             params.upCount = page.upCount;
             params.imgcount = page.imgcount;
